@@ -16,21 +16,21 @@ float hum;
 unsigned long timing1;
 unsigned long timing2;
 
-//sensor polling time in ms
+// Sensor polling time in ms
 int sensors = 5000;
 //display off time in ms
 int dispoff = 300000;
 
-//CO2 sensor
+// CO2 sensor
 int errorCO2 = 2500;
 int warningCO2 = 1000;
 
-//MQTT server
+// MQTT server
 #define mqtt_server "SERVERIP"
 #define mqtt_user "USER" 
 #define mqtt_password "PASSWORD"
 
-//unique id !!!
+// Unique ID for each device !!!
 #define mqtt_client_id "m5bedroom"
 #define co2_topic "m5bedroom/sensor/co2"
 #define humidity_topic "m5bedroom/sensor/humidity"
@@ -39,6 +39,7 @@ int warningCO2 = 1000;
 WiFiClient espClient;
 PubSubClient client(espClient);
 
+// Wi-Fi settings
 const char* ssid = "SSID";
 const char* password = "PASSWORD";
 
@@ -65,7 +66,7 @@ void setup(){
   M5.Lcd.print("IP address: ");
   M5.Lcd.println(WiFi.localIP());
 
-  // startup mqtt connection
+// Startup MQTT connection
   client.setServer(mqtt_server, 1883);
 
   pinMode(M5_LED, OUTPUT);
@@ -163,7 +164,7 @@ void loop() {
     digitalWrite(M5_LED, HIGH);
   }
 
-// Display off time
+// Display off
 
   if ( millis() - timing2 > dispoff ) {
     timing2 = millis();
