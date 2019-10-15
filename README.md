@@ -1,6 +1,6 @@
 #  M5StickC (ESP32) CO2 monitor with MQTT client
 
-![](D:\Google Drive\m5stick-co2.png)
+![](m5stick-co2.png)
 
 I used:
 
@@ -11,4 +11,4 @@ I used:
 
 Schematic:
 
-![](C:\Users\mrzay\OneDrive\Pictures\Schematic.PNG)
+![](Schematic.PNG)
